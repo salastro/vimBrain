@@ -1,7 +1,5 @@
 def vimBrain(code):
-    array = [0]
-    pointer = 0
-    i = 0
+    array, starts, ends, i, pointer = [0], [], [], 0, 0
     print(code)
     while i < len(code):
         match code[i]:
@@ -11,28 +9,16 @@ def vimBrain(code):
             case 'j': array[pointer] -= 1 if array[pointer] > 0 else 0
             case 'p': print(chr(array[pointer]), end='')
             case 'i':
-                x = input("Input:")[0]
+                x = input()
                 try:
                     y = int(x)
                 except ValueError:
                     y = ord(x)
                 array[pointer] = y
-            case 'q':
-                if array[pointer] == 0:
-                    loop = 1
-                    while loop > 0:
-                        i += 1
-                        match code[i]:
-                            case 'q': loop += 1
-                            case '@': loop -= 1
+            case 'q': starts.append(i) if array[pointer] != 0 else 0
             case '@':
-                loop = 1
-                while loop > 0:
-                    i -= 1
-                    match code[i]:
-                        case 'q': loop -= 1
-                        case '@': loop += 1
-                i -= 1
+                ends.append(i); i = starts[-1]
+                if array[pointer] == 0: starts.pop(-1); i = ends[-1]
         i += 1
 
 
