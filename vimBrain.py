@@ -1,6 +1,5 @@
 def vimBrain(code):
     array, starts, ends, i, pointer = [0], [], [], 0, 0
-    print(code)
     while i < len(code):
         match code[i]:
             case 'h': pointer -= 1 if pointer > 0 else 0
