@@ -17,6 +17,5 @@ def interpreter(code):
         i += 1
 
 
-interpreter("""
-kkkkqlkkkkkhj@lqhkkkkklj@khkqlqlklkhhj@kkllqhhkllj@lllqj@kklqj@klllkqqj@kkkkkklll@hhhqqhkkkkkkkkhkkllj@khphqljjjjhj@h@hhqlllllqlllqj@kkkkkkkkkhqljhj@kkkkkkkkklqjqhjlj@kqhhh@@hqlkhj@l@hhj@hhj@
-""")
+def converter(code):
+    return code.replace('<', 'h').replace('>', 'l').replace('+', 'k').replace('-', 'j').replace('.', 'p').replace(',', 'i').replace('[', 'q').replace(']', '@')
