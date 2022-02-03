@@ -1,15 +1,15 @@
 def interpreter(code):
-    array, starts, user, loops, i, pointer = [0], [], [], {}, 0, 0
+    array, starts, user, loops, i, pointer = [0]*30000, [], [], {}, 0, 0
     for index, instruction in enumerate(code):
         match instruction:
             case "q": starts.append(index)
             case "@": start = starts.pop(); loops[start] = index; loops[index] = start
     while i < len(code):
         match code[i]:
-            case 'h': pointer -= 1 if pointer > 0 else 0
-            case 'l': pointer += 1; array.append(0) if len(array) <= pointer else 0
+            case 'h': pointer -= 1
+            case 'l': pointer += 1
             case 'k': array[pointer] += 1
-            case 'j': array[pointer] -= 1 if array[pointer] > 0 else 0
+            case 'j': array[pointer] -= 1
             case 'p': print(chr(array[pointer]), end='')
             case 'i': list(input() + "\n") if user == [] else 0; array[pointer] = ord(user.pop(0))
             case 'q': i = loops[i] if not array[pointer] else i
@@ -18,5 +18,5 @@ def interpreter(code):
 
 
 interpreter("""
-kkkk[lkkkkkhj]l[hkkkkklj]khk[ l[ l k l khhj]kkll[hhkllj]lll[j]kk l [j]k lllk[[j]kkkkkklll]hhh[[hkkkkkkkkhkkllj]khph[ljjjjhj]h] hh[lllll[lll[j]kkkkkkkkkh[ljhj]kkkkkkkkkl[j[hjlj]k[hhh]]h[lkhj]l]hhj]hhj ]
+kkkkqlkkkkkhj@lqhkkkkklj@khkqlqlklkhhj@kkllqhhkllj@lllqj@kklqj@klllkqqj@kkkkkklll@hhhqqhkkkkkkkkhkkllj@khphqljjjjhj@h@hhqlllllqlllqj@kkkkkkkkkhqljhj@kkkkkkkkklqjqhjlj@kqhhh@@hqlkhj@l@hhj@hhj@
 """)
