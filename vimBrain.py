@@ -18,10 +18,6 @@ def vimBrain(code):
                 except ValueError:
                     y = ord(x)
                 array[pointer] = y
-            case 'q': starts.append(i) if array[pointer] != 0 else 0
-            case '@':
-                ends.append(i); i = starts[-1]
-                if array[pointer] == 0: starts.pop(-1); i = ends[-1]
             case 'q': i = loops[i] if not array[pointer] else i
             case '@': i = loops[i] if array[pointer] else i
         i += 1
