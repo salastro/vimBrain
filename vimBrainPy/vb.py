@@ -15,7 +15,7 @@
 # along with this program; if not, see <http://www.gnu.org/licenses/>.
 
 def interpreter(code):
-    array, starts, user, loops, i, pointer = [0]*30000, [], [], {}, 0, 0
+    array, starts, user, loops, i, pointer = [0] * 30000, [], [], {}, 0, 0
     for index, instruction in enumerate(code):
         match instruction:
             case 'q': starts.append(index)
