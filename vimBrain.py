@@ -1,4 +1,4 @@
-def vimBrain(code):
+def interpreter(code):
     array, starts, user, loops, i, pointer = [0], [], [], {}, 0, 0
     for index, instruction in enumerate(code):
         match instruction:
@@ -17,6 +17,6 @@ def vimBrain(code):
         i += 1
 
 
-vimBrain("""
-lkkkkkkkkqhkkkkkkkkklj@hplkkkkqhkkkkkkklj@hkpkkkkkkkppkkkpllkkkkkkqhkkkkkkklj@hkkpjjjjjjjjjjjjplkkkkkkqhkkkkkkkkklj@hkphpkkkpjjjjjjpjjjjjjjjplllkkkkqhkkkkkkkklj@hkp
+interpreter("""
+kkkk[lkkkkkhj]l[hkkkkklj]khk[ l[ l k l khhj]kkll[hhkllj]lll[j]kk l [j]k lllk[[j]kkkkkklll]hhh[[hkkkkkkkkhkkllj]khph[ljjjjhj]h] hh[lllll[lll[j]kkkkkkkkkh[ljhj]kkkkkkkkkl[j[hjlj]k[hhh]]h[lkhj]l]hhj]hhj ]
 """)
