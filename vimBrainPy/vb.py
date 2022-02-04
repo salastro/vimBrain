@@ -33,5 +33,5 @@ def interpreter(code):
         i += 1
 
 
-def converter(code):
-    return code.replace('<', 'h').replace('>', 'l').replace('+', 'k').replace('-', 'j').replace('.', 'p').replace(',', 'i').replace('[', 'q').replace(']', '@')
+commands = {'<': 'h', '>': 'l', '+': 'k', '-': 'j', '.': 'p', ',': 'i', '[': 'q', ']': '@'}
+converter = lambda code: "".join([commands.get(ip, ip) for ip in code])
